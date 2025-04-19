@@ -36,67 +36,75 @@ export default () => {
 			fontFamily: ['Noto Sans', 'Exo', 'sans-serif'].join(','),
 		},
 		palette: {
+			mode: "dark",
 			primary: {
-				main: '#000000',
-				light: '#3483ebce',
-				dark: '#023373 ',
-				contrastText: '#ffffff',
+			  main: "#9CE60D", // Using success color as primary accent
+			  light: "#B8FF2A",
+			  dark: "#7AB80A",
+			  alt: "#9CE60D",
+			  contrastText: "#000000",
 			},
 			secondary: {
-				main: '#141414',
-				light: '#000000',
-				dark: '#000000',
-				contrastText: '#ffffff',
-			},
-			error: {
-				main: '#6e1616',
-				light: '#a13434',
-				dark: '#430b0b',
+			  main: "#141414",
+			  dark: "#000000",
+			  light: "#1C1C1C",
+			  contrastText: "#ffffff",
 			},
 			success: {
-				main: '#9CE60D',
-				light: '#60eb50',
-				dark: '#244a20',
+			  main: "#9CE60D",
+			  light: "#60eb50",
+			  dark: "#244a20",
+			},
+			error: {
+			  main: "#6e1616",
+			  light: "#a13434",
+			  dark: "#430b0b",
 			},
 			warning: {
-				main: '#f09348',
-				light: '#f2b583',
-				dark: '#b05d1a',
+			  main: "#f09348",
+			  light: "#f2b583",
+			  dark: "#b05d1a",
 			},
 			info: {
-				main: '#247ba5',
-				light: '#247ba5',
-				dark: '#175878',
+			  main: "#247ba5",
+			  light: "#247ba5",
+			  dark: "#175878",
 			},
 			text: {
-				main: '#ffffff',
-				alt: '#cecece',
-				info: '#919191',
-				light: '#ffffff',
-				dark: '#000000',
+			  main: "#ffffff",
+			  alt: "#cecece",
+			  info: "#919191",
+			  light: "#ffffff",
+			  dark: "#000000",
 			},
 			rarities: {
-				rare1: '#ffffff',
-				rare2: '#9CE60D',
-				rare3: '#247ba5',
-				rare4: '#8e3bb8',
-				rare5: '#f2d411',
+			  rare1: "#ffffff",
+			  rare2: "#9CE60D",
+			  rare3: "#247ba5",
+			  rare4: "#8e3bb8",
+			  rare5: "#f2d411",
 			},
 			border: {
-				main: '#e0e0e008',
-				light: '#1d75a8c7',
-				dark: '#26292d',
-				input: 'rgba(255, 255, 255, 0.23)',
-				divider: 'rgba(255, 255, 255, 0.12)',
+			  main: "#e0e0e008",
+			  light: "#1d75a8c7",
+			  dark: "#26292d",
+			  input: "rgba(255, 255, 255, 0.23)",
+			  divider: "rgba(255, 255, 255, 0.12)",
 			},
-			mode: 'dark',
-		},
+			background: {
+			  default: "#121828",
+			  paper: "rgb(18,18,28)",
+			},
+		  },
 		components: {
 			MuiButton: {
-				root: {
-                    color: 'rgba(0, 0, 0, 1.0)',
-                },
-			},
+				styleOverrides: {
+				  root: {
+					textTransform: "none",
+					borderRadius: 8,
+				  },
+				},
+			  },
 			MuiCssBaseline: {
 				styleOverrides: {
 					'.fade-enter': {
@@ -118,22 +126,22 @@ export default () => {
 			},
 			MuiTooltip: {
 				styleOverrides: {
-					tooltip: {
-						fontSize: 16,
-						background: 'rgb(18,18,28)',
-						background: 'rgb(18,18,28)',
-						border: '1px solid rgba(255, 255, 255, 0.23)',
-						boxShadow: `0 0 10px #000`,
-					},
+				  tooltip: {
+					fontSize: 16,
+					background: "rgb(18,18,28)",
+					border: "1px solid rgba(255, 255, 255, 0.23)",
+					boxShadow: "0 0 10px #000",
+				  },
 				},
-			},
+			  },
 			MuiPaper: {
 				styleOverrides: {
-					root: {
-						background: 'rgb(18,18,28)',
-					},
+				  root: {
+					background: "rgb(18,18,28)",
+					backgroundImage: "none",
+				  },
 				},
-			},
+			  },
 		},
 	});
 

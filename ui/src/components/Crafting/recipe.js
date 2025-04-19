@@ -23,309 +23,212 @@ import { useTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme) => ({
 	customRippleGreen: {
-		color: 'rgba(0, 36, 0, 0.9)', 
-	},
-	customRippleRed: {
-		color: 'rgba(219, 40, 9, 0.9)', 
-	},
-	wrapper: {
+		color: "rgba(0, 36, 0, 0.9)",
+	  },
+	  customRippleRed: {
+		color: "rgba(219, 40, 9, 0.9)",
+	  },
+	  wrapper: {
 		width: "100%",
 		height: "100%",
-		background: 'radial-gradient(circle at top, rgba(46, 62, 79, 0.8) 5%, rgba(10, 14, 18, 0.8) 80%)',
-		backgroundColor: "rgba(9, 49, 71, 0.6)",
-		borderRadius: '1.5vh',
-		padding: "2%",      
+		background: "rgba(18, 18, 28, 0.7)",
+		//backdropFilter: "blur(5px)",
+		borderRadius: 8,
+		padding: 16,
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "space-between",
-		//maxHeight: "100%",
-	},
-
-	TopContainer: {
-		flex: '0 0 25%',
-		//backgroundColor: "yellow",
+		boxShadow: "0 4px 15px rgba(0, 0, 0, 0.15)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+	  },
+	  TopContainer: {
+		flex: "0 0 25%",
 		width: "100%",
-		//padding: "2%",   
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
-		flexDirection: "row", 
-		overflow: 'hidden', 
-	},
-	topLeftContainer: {
-		padding: "2%", 
-		flex: '0 0 20%',
+		flexDirection: "row",
+		overflow: "hidden",
+	  },
+	  topLeftContainer: {
+		padding: 8,
+		flex: "0 0 20%",
 		height: "100%",
-		//backgroundColor: "purple",
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
-		borderRadius: '1.5vh',
-	},
-	topRightContainer: {
-		padding: "2%", 
-		flex: '0 0 78%',
+		borderRadius: 8,
+		boxShadow: "0 4px 15px rgba(0, 0, 0, 0.15)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+		background: "rgba(0, 0, 0, 0.2)",
+	  },
+	  topRightContainer: {
+		padding: 8,
+		flex: "0 0 78%",
 		height: "100%",
-		//backgroundColor: "purple",
 		display: "flex",
 		justifyContent: "flex-start",
 		alignItems: "space-between",
-		borderRadius: '1.5vh',
+		borderRadius: 8,
 		flexDirection: "column",
 		overflow: "hidden",
-	},
-	toprightTopContainer: {
+	  },
+	  toprightTopContainer: {
 		overflow: "hidden",
-		flex: '0 0 35%',
-		//backgroundColor: "red",
-		fontSize: "2.5vh",
+		flex: "0 0 35%",
+		fontSize: 20,
 		fontWeight: 700,
 		display: "flex",
 		justifyContent: "flex-start",
 		alignItems: "center",
-	},
-	toprightSpaceContainer: {
-		flex: '0 0 15%',
-	},
-	toprightMiddleContainer: {
+	  },
+	  toprightMiddleContainer: {
 		display: "flex",
 		alignItems: "center",
-		flex: '0 0 25%',
-		color: "blue",
-	},
-	toprightBottomContainer: {
+		flex: "0 0 25%",
+	  },
+	  toprightBottomContainer: {
 		display: "flex",
 		alignItems: "center",
-		flex: '0 0 25%',
-		color: "blue",
-	},
-	mainImage: {
+		flex: "0 0 25%",
+	  },
+	  mainImage: {
 		height: "auto",
-		width: '100%',
-		//backgroundColor: "orange",
-		objectFit: 'contain', 
-	},
-
-	MiddleContainer: {
-		flex: '0 0 65%',
-		width: "100%",  
-		paddingTop: "4%",
+		width: "100%",
+		objectFit: "contain",
+	  },
+	  MiddleContainer: {
+		flex: "0 0 65%",
+		width: "100%",
+		paddingTop: 16,
 		display: "flex",
 		overflow: "hidden",
-	},
-	middleCraftContainer: {
-		backgroundColor: "rgba(0, 18, 28, 0.5)",
-		borderRadius: '1.25vh',
-		padding: "2%",    
-		//minHeight: "25%",
+	  },
+	  middleCraftContainer: {
+		backgroundColor: "rgba(0, 0, 0, 0.2)",
+		borderRadius: 8,
+		padding: 16,
 		height: "auto",
 		width: "100%",
 		display: "flex",
 		flexDirection: "column",
 		overflow: "hidden",
-	},
-	middleTopContainer: {
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+	  },
+	  middleTopContainer: {
 		display: "flex",
 		flex: "0 0 15%",
-		//backgroundColor: "yellow",
-		fontSize: "2vh",
+		fontSize: 16,
 		fontWeight: 800,
 		justifyContent: "flex-start",
 		alignItems: "flex-start",
-	},
-	middleBottomContainer: {
+		marginBottom: 12,
+	  },
+	  middleBottomContainer: {
 		flex: "1 1 auto",
 		overflow: "auto",
-		//backgroundColor: "white",
-		display: 'grid',
-		gridTemplateColumns: 'repeat(4, 15%)',
+		display: "grid",
+		gridTemplateColumns: "repeat(4, 15%)",
 		justifyContent: "center",
-		gap: "3vh",
-		gridAutoRows: 'max-content',
-	},
-
-	BottomContainer: {
-		flex: '0 0 10%',
-		//backgroundColor: "orange",
+		gap: 24,
+		gridAutoRows: "max-content",
+		"&::-webkit-scrollbar": {
+		  width: 6,
+		},
+		"&::-webkit-scrollbar-thumb": {
+		  background: "rgba(255, 255, 255, 0.1)",
+		  borderRadius: 3,
+		  transition: "background ease-in 0.15s",
+		},
+		"&::-webkit-scrollbar-thumb:hover": {
+		  background: "rgba(255, 255, 255, 0.2)",
+		},
+		"&::-webkit-scrollbar-track": {
+		  background: "transparent",
+		},
+	  },
+	  BottomContainer: {
+		flex: "0 0 10%",
 		width: "100%",
-		paddingTop: "2%",    
+		paddingTop: 16,
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
 		overflow: "hidden",
-	},
-	bottomLeftContainer: {
-		flex: '0 0 15%',
-		boxShadow: 'inset 0 0 4vh rgba(48, 48, 48, 0.8)',
+	  },
+	  bottomLeftContainer: {
+		flex: "0 0 15%",
+		boxShadow: "inset 0 0 4vh rgba(0, 0, 0, 0.3)",
 		height: "100%",
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-evenly",
-		borderRadius: "1.25vh"
-	},
-
-	bottomRightContainer: {
-		flex: '0 0 83%',
-		//backgroundColor: "green",
+		borderRadius: 8,
+		background: "rgba(18, 18, 28, 0.5)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+	  },
+	  bottomRightContainer: {
+		flex: "0 0 83%",
 		height: "100%",
 		display: "flex",
 		justifyContent: "space-evenly",
 		alignItems: "center",
-	},
-	craftButton: {
+	  },
+	  craftButton: {
 		width: "100%",
-		height: '100%',
-		//backgroundColor: "green",
+		height: "100%",
 		color: "white",
 		fontWeight: 600,
-		'&:hover': {
-			backgroundColor: 'rgba(1, 77, 0, 0.8)',
-			//color: 'white',
+		"&:hover": {
+		  backgroundColor: "rgba(1, 77, 0, 0.8)",
 		},
-		//border: '2px solid rgba(214, 145, 26, 0.7)',
-		boxShadow: 'inset 0 0 4vh rgba(2, 191, 0, 0.8)',
-		borderRadius: '1.25vh',
+		borderRadius: 8,
 		textTransform: "none",
 		display: "flex",
 		justifyContent: "center",
-		fontSize: "1.5vh",
-	},
-
-
-	recipe: {
-		height: 250,
-		border: `1px solid ${theme.palette.border.divider}`,
-	},
-	craftBtn: {
-		width: '100%',
-		height: '100%',
-		borderRadius: 0,
-		lineHeight: '200px',
-		borderRight: `1px solid ${theme.palette.border.divider}`,
-		'&.Mui-disabled': {
-			background: '#1e1e1e',
-		},
-	},
-	content: {
-		height: 215,
-		background: theme.palette.secondary.dark,
-	},
-	bottomBar: {
-		height: 35,
-		lineHeight: '35px',
-		background: theme.palette.secondary.light,
-		borderTop: `1px solid ${theme.palette.border.divider}`,
-	},
-	title: {
-		width: '100%',
-	},
-	progress: {
-		height: 35,
-		borderTop: `1px solid ${theme.palette.border.divider}`,
-		position: 'relative',
-	},
-	progressTxt: {
-		position: 'absolute',
-		width: 'fit-content',
-		height: 'fit-content',
-		top: 0,
-		bottom: 0,
-		left: 15,
-		margin: 'auto',
-		zIndex: 1,
-	},
-	progressBar: {
-		height: '100%',
-	},
-	img: {
-		width: '80%',
-		maxWidth: 170,
-		position: 'absolute',
-		top: 0,
-		bottom: 0,
-		left: 0,
-		right: 0,
-		margin: 'auto',
-		//backgroundColor: "red",
-	},
-
-
-
-	ingredients: {
-		height: 155,
-		overflow: 'auto',
-		'&::-webkit-scrollbar': {
-			width: 6,
-		},
-		'&::-webkit-scrollbar-thumb': {
-			background: `${theme.palette.primary.main}9e`,
-			transition: 'background ease-in 0.15s',
-		},
-		'&::-webkit-scrollbar-thumb:hover': {
-			background: `${theme.palette.primary.main}61`,
-		},
-		'&::-webkit-scrollbar-track': {
-			background: 'transparent',
-		},
-	},
-
-	inputText: {
-		// marginLeft: "1vh",
-		// marginRight: "1vh",
-		textAlign: 'center',
+		fontSize: 14,
+	  },
+	  inputText: {
+		textAlign: "center",
 		height: "100%",
-		//sbackgroundColor: "yellow",
-		fontSize: "2vh",
+		fontSize: 16,
 		width: "75%",
-	},
-
-
-
-	
-	popoverContainer: {
-		pointerEvents: 'none',
-		fontSize: "1.5vh",
-	},
-	paperContainer: {
-		padding: "1vh",
-		border: `0.25vh solid ${theme.palette.primary.dark}`,
-		borderRadius: "1.25vh",
-		'&.rarity-1': {
-			borderColor: theme.palette.rarities.rare1,
+		fontWeight: 600,
+	  },
+	  popoverContainer: {
+		pointerEvents: "none",
+	  },
+	  paperContainer: {
+		padding: 15,
+		border: `1px solid rgba(255, 255, 255, 0.1)`,
+		borderRadius: 8,
+		//backdropFilter: "blur(10px)",
+		background: "rgba(18, 18, 28, 0.95)",
+		boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+		"&.rarity-1": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare1}`,
 		},
-		'&.rarity-2': {
-			borderColor: theme.palette.rarities.rare2,
+		"&.rarity-2": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare2}`,
 		},
-		'&.rarity-3': {
-			borderColor: theme.palette.rarities.rare3,
+		"&.rarity-3": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare3}`,
 		},
-		'&.rarity-4': {
-			borderColor: theme.palette.rarities.rare4,
+		"&.rarity-4": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare4}`,
 		},
-	},
-	craftTime: {
-		marginLeft: 15,
-		'& span': {
-			color: theme.palette.info.main,
-			marginLeft: 5,
-			'&::after': {
-				content: '"s"',
-			},
+		"&.rarity-5": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare5}`,
 		},
-	},
-	cooldown: {
-		display: 'inline-block',
-		width: 'fit-content',
-		height: 'fit-content',
-		float: 'right',
-		marginRight: 10,
-
-		'& b': {
-			marginLeft: 6,
-		},
-	},
+	  },
+	  cooldownText: {
+		color: "white",
+		marginRight: 4,
+		fontWeight: 700,
+		fontSize: 14,
+	  },
 }));
 
 const Recipe = ({ index, recipe, cooldown }) => {

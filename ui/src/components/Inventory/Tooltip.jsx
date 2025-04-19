@@ -63,130 +63,195 @@ export default ({
 	const items = useSelector((state) => state.inventory.items);
 	const useStyles = makeStyles((theme) => ({
 		body: {
-			minWidth: 250,
-		},
-		itemName: {
-			fontSize: 24,
+			minWidth: 280,
+		  },
+		  itemName: {
+			fontSize: 20,
+			fontWeight: 600,
 			color: theme.palette.text.main,
-		},
-		itemType: {
-			fontSize: 16,
+			marginBottom: 4,
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
+		  },
+		  itemType: {
+			fontSize: 14,
 			color: Boolean(theme.palette.rarities[`rare${item.rarity}`])
-				? theme.palette.rarities[`rare${item.rarity}`]
-				: theme.palette.text.main,
-		},
-		usable: {
-			fontSize: 16,
+			  ? theme.palette.rarities[`rare${item.rarity}`]
+			  : theme.palette.text.main,
+			marginBottom: 8,
+			display: "flex",
+			alignItems: "center",
+		  },
+		  usable: {
+			fontSize: 12,
 			color: theme.palette.success.light,
-			'&::before': {
-				color: theme.palette.text.main,
-				content: '" - "',
-			},
-		},
-		tooltipDetails: {
-			marginTop: 4,
-			paddingTop: 4,
-			borderTop: `1px solid ${theme.palette.border.input}`,
-		},
-		tooltipValue: {
+			marginLeft: 8,
+			background: "rgba(156, 230, 13, 0.1)",
+			padding: "2px 8px",
+			borderRadius: 12,
+			fontWeight: 600,
+		  },
+		  tooltipDetails: {
+			marginTop: 12,
+			paddingTop: 12,
+			borderTop: `1px solid rgba(255, 255, 255, 0.1)`,
+			display: "flex",
+			flexWrap: "wrap",
+			gap: 8,
+		  },
+		  tooltipValue: {
 			fontSize: 14,
 			color: theme.palette.text.alt,
-		},
-		stackable: {
+		  },
+		  stackable: {
 			fontSize: 10,
 			marginLeft: 2,
-		},
-		quality: {
+			color: theme.palette.text.alt,
+		  },
+		  quality: {
 			fontSize: 14,
 			color: isNaN(instance?.Quality)
-				? theme.palette.text.alt
-				: instance?.Quality >= 75
+			  ? theme.palette.text.alt
+			  : instance?.Quality >= 75
 				? theme.palette.success.light
 				: instance?.Quality >= 50
-				? theme.palette.warning.light
-				: theme.palette.error.light,
-			'&::after': {
-				content: '"%"',
+				  ? theme.palette.warning.light
+				  : theme.palette.error.light,
+			"&::after": {
+			  content: '"%"',
 			},
-		},
-		durability: {
+		  },
+		  durability: {
 			fontSize: 14,
 			color: isNaN(durability)
-				? theme.palette.text.alt
-				: durability >= 75
+			  ? theme.palette.text.alt
+			  : durability >= 75
 				? theme.palette.success.light
 				: durability >= 50
-				? theme.palette.warning.light
-				: theme.palette.error.light,
-			'&::after': {
-				content: '"%"',
+				  ? theme.palette.warning.light
+				  : theme.palette.error.light,
+			"&::after": {
+			  content: '"%"',
 			},
-		},
-		broken: {
+		  },
+		  broken: {
 			fontSize: 14,
 			color: theme.palette.error.light,
-		},
-		itemPrice: {
-			fontSize: 14,
-			color: theme.palette.success.main,
-			'&::before': {
-				content: '"$"',
-				marginRight: 2,
-				marginLeft: 8,
-				color: theme.palette.text.main,
-			},
-		},
-		description: {
-			paddingLeft: 20,
+		  },
+		  itemPrice: {
 			fontSize: 16,
-			color: theme.palette.text.alt,
-		},
-		metadata: {
-			marginTop: 10,
-			paddingTop: 10,
-			borderTop: `1px solid ${theme.palette.border.input}`,
+			color: theme.palette.success.main,
+			fontWeight: 600,
+			"&::before": {
+			  content: '"$"',
+			  marginRight: 2,
+			},
+		  },
+		  description: {
 			fontSize: 14,
 			color: theme.palette.text.alt,
-		},
-		metafield: {
-			'& b': {
-				fontSize: 16,
-			},
-		},
-		qualifications: {
+			marginBottom: 12,
+			lineHeight: 1.5,
+		  },
+		  metadata: {
+			marginTop: 12,
+			paddingTop: 12,
+			borderTop: `1px solid rgba(255, 255, 255, 0.1)`,
 			fontSize: 14,
-			marginTop: 4,
-			paddingTop: 4,
-			borderTop: `1px solid ${theme.palette.border.input}`,
-			'& svg': {
-				marginRight: 10,
+			color: theme.palette.text.alt,
+		  },
+		  metafield: {
+			marginBottom: 6,
+			"& b": {
+			  fontSize: 14,
+			  color: theme.palette.text.main,
 			},
-		},
-		inelig: {
+		  },
+		  qualifications: {
+			fontSize: 14,
+			marginTop: 12,
+			paddingTop: 12,
+			borderTop: `1px solid rgba(255, 255, 255, 0.1)`,
+			"& svg": {
+			  marginRight: 8,
+			},
+		  },
+		  inelig: {
 			color: theme.palette.error.light,
-		},
-		elig: {
+			display: "flex",
+			alignItems: "center",
+			marginBottom: 4,
+		  },
+		  elig: {
 			color: theme.palette.success.light,
-		},
-		attachFitment: {
+			display: "flex",
+			alignItems: "center",
+			marginBottom: 4,
+		  },
+		  attachFitment: {
 			fontSize: 14,
-			'& li': {
-				fontSize: 12,
+			marginTop: 12,
+			"& li": {
+			  fontSize: 12,
+			  marginBottom: 4,
 			},
-		},
-		title: {
-			'& svg': {
-				marginRight: 6,
-				color: 'gold',
+		  },
+		  title: {
+			"& svg": {
+			  marginRight: 6,
+			  color: theme.palette.warning.main,
 			},
-		},
-		attchList: {
-			marginLeft: -6,
-			listStyle: 'none',
-		},
-		attchSlot: {
-			textTransform: 'capitalize',
-		},
+		  },
+		  attchList: {
+			marginLeft: 0,
+			paddingLeft: 16,
+			listStyle: "none",
+		  },
+		  attchSlot: {
+			textTransform: "capitalize",
+			color: theme.palette.text.main,
+		  },
+		  statChip: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: theme.palette.text.main,
+			border: "1px solid rgba(255, 255, 255, 0.1)",
+			"& .MuiChip-label": {
+			  padding: "0 8px",
+			},
+		  },
+		  rarityBadge: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: Boolean(theme.palette.rarities[`rare${item.rarity}`])
+			  ? theme.palette.rarities[`rare${item.rarity}`]
+			  : theme.palette.text.main,
+			border: `1px solid ${
+			  Boolean(theme.palette.rarities[`rare${item.rarity}`])
+				? theme.palette.rarities[`rare${item.rarity}`]
+				: "rgba(255, 255, 255, 0.1)"
+			}`,
+			marginRight: 8,
+			"& .MuiChip-label": {
+			  padding: "0 8px",
+			},
+		  },
+		  typeBadge: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: theme.palette.text.main,
+			border: "1px solid rgba(255, 255, 255, 0.1)",
+			"& .MuiChip-label": {
+			  padding: "0 8px",
+			},
+		  },
 	}));
 	const classes = useStyles();
 

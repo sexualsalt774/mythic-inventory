@@ -8,39 +8,86 @@ import { getItemImage } from '../Inventory/item';
 import { useTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles((theme) => ({
-	ingImg: {
+	reagentContainer: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		flexDirection: "column",
+		width: "100%",
+	  },
+	  reagentItem: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "100%",
+		height: "auto",
+		aspectRatio: "1 / 1",
+		backgroundColor: "rgba(0, 0, 0, 0.5)",
+		borderRadius: 8,
+		padding: 0,
+		margin: 0,
+		boxShadow: "0 4px 15px rgba(0, 0, 0, 0.15)",
+		overflow: "hidden",
+		transition: "all 0.2s ease",
+		"&:hover": {
+		  transform: "translateY(-2px)",
+		  boxShadow: "0 6px 20px rgba(0, 0, 0, 0.25)",
+		},
+	  },
+	  ingImg: {
 		width: "50%",
 		height: "auto",
-		//backgroundColor: "yellow",
-	},
-
-	invalid: {
+		objectFit: "contain",
+	  },
+	  countDisplay: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		flexDirection: "row",
+		fontSize: "14px",
+		marginTop: 4,
+	  },
+	  invalid: {
 		color: theme.palette.error.main,
-	},
-	popover: {
-		pointerEvents: 'none',
-		fontSize: "1.5vh",
-	},
-	paper: {
-		padding: "1vh",
-		border: `0.25vh solid ${theme.palette.primary.dark}`,
-		borderRadius: "1.25vh",
-		'&.rarity-1': {
-			borderColor: theme.palette.rarities.rare1,
+	  },
+	  itemLabel: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		paddingTop: 6,
+		textAlign: "center",
+		color: "#fff",
+		fontSize: "12px",
+		whiteSpace: "nowrap",
+		textOverflow: "ellipsis",
+		maxWidth: "100%",
+	  },
+	  popover: {
+		pointerEvents: "none",
+	  },
+	  paper: {
+		padding: 15,
+		border: `1px solid rgba(255, 255, 255, 0.1)`,
+		borderRadius: 8,
+		//backdropFilter: "blur(10px)",
+		background: "rgba(18, 18, 28, 0.95)",
+		boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
+		"&.rarity-1": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare1}`,
 		},
-		'&.rarity-2': {
-			borderColor: theme.palette.rarities.rare2,
+		"&.rarity-2": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare2}`,
 		},
-		'&.rarity-3': {
-			borderColor: theme.palette.rarities.rare3,
+		"&.rarity-3": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare3}`,
 		},
-		'&.rarity-4': {
-			borderColor: theme.palette.rarities.rare4,
+		"&.rarity-4": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare4}`,
 		},
-		'&.rarity-5': {
-			borderColor: theme.palette.rarities.rare5,
+		"&.rarity-5": {
+		  borderLeft: `3px solid ${theme.palette.rarities.rare5}`,
 		},
-	},
+	  },
 }));
 
 export default ({ item, qty }) => {
