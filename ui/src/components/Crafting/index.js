@@ -29,6 +29,8 @@ const useStyles = makeStyles((styles) => ({
 		textAlign: 'center',
 		'& span': {
 			display: 'block',
+			marginTop: 15,
+			color: "#fff",
 		},
 	},
 	wrapper: {
@@ -53,13 +55,9 @@ const useStyles = makeStyles((styles) => ({
 		'-webkit-user-select': 'none',
 		width: "100%",
 		height: "100%",
-		//backgroundColor: "white",
-		//transform: 'rotate(-1deg)', 
-    	//transition: 'transform 0.3s ease',
 	},
 	topContainer: {
 		flex: '0 0 15%',
-		//backgroundColor: 'red',
 		width: "100%",
 		display: 'flex',
 		justifyContent: 'flex-start',
@@ -67,34 +65,31 @@ const useStyles = makeStyles((styles) => ({
 	},
 	topLeftContainer: {
 		width: "15%",
-		background: 'radial-gradient(circle at center, rgba(46, 62, 79, 0.6) 5%, rgba(10, 14, 18, 0.6) 80%)',
-		//backgroundColor: "rgba(0, 0, 0, 0.5)",
+		background: 'rgba(18, 18, 28, 0.7)',
+		//backdropFilter: "blur(5px)",
 		height: "60%",
-		borderRadius: "0.5vh",
+		borderRadius: 8,
 		display: "flex",
 		justifyContent: "center",
 		textAlign: "center",
 		alignItems: "center",
 		fontWeight: 600,
-		fontSize: "2vh",
+		fontSize: 18,
+		boxShadow: "0 4px 15px rgba(0, 0, 0, 0.15)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
 	},
 	bottomContainer: {
 		flex: '0 0 85%',
-		//backgroundColor: 'orange',
 		width: "100%",
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
-		//maxHeight: "100%",
 		overflow: "hidden",
 	},
 	leftContainer: {
 		flex: '0 0 49%',
-		//backgroundColor: 'yellow',
 		height: "100%",
-		//padding: "10%",
 		overflow: "hidden",
-		// comment out if using search
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
@@ -102,33 +97,28 @@ const useStyles = makeStyles((styles) => ({
 	leftContainerTop: {
 		width: "100%",
 		height: "10%",
-		//backgroundColor: "gray",
 		display: "flex",
 		justifyContent: "space-between",
 		flexDirection: "row",
 		alignItems: "center",
-		paddingLeft: "1vh",
-		paddingRight: "1vh",
-		borderRadius: '1.25vh',
+		padding: "0 10px",
+		borderRadius: 8,
 		boxShadow: 'inset 0 0 4vh rgba(13, 13, 13, 0.8)',
 		overflow: "hidden",
-		marginBottom: "2vh",
+		marginBottom: 16,
 	},
 	rightContainer: {
 		flex: '0 0 49%',
-		//backgroundColor: 'lightblue',
 		height: "100%",
 	},
-
 	noRecipes: {
 		fontWeight: 700,
-		fontSize: "2vh",
-		padding: "3vh",
+		fontSize: 18,
+		padding: 24,
 		textAlign: 'center',
+		color: "#fff",
 	},
-
 	gridContainer: {
-		//backgroundColor: "white",
 		display: 'grid',
 		gridAutoRows: 'max-content',
 		gridTemplateColumns: 'repeat(5, 17%)',
@@ -136,20 +126,23 @@ const useStyles = makeStyles((styles) => ({
 		width: "100%",
 		maxWidth: "100%",
 		overflowX: "hidden",
-		gap: "2vh",
+		gap: 16,
 		overflowY: "auto",
 		height: "92%",
-		//height: "85%", // if using scroll bar set this
-		// '&::-webkit-scrollbar': {
-		// 	width: '12px', 
-		// },
-		// '&::-webkit-scrollbar-thumb': {
-		// 	backgroundColor: 'rgba(0, 0, 0, 0.5)',
-		// 	borderRadius: '6px', 
-		// },
-		// '&::-webkit-scrollbar-track': {
-		// 	backgroundColor: 'rgba(0, 0, 0, 0.1)', 
-		// },
+		'&::-webkit-scrollbar': {
+			width: 6,
+		},
+		'&::-webkit-scrollbar-thumb': {
+			background: "rgba(255, 255, 255, 0.1)",
+			borderRadius: 3,
+			transition: "background ease-in 0.15s",
+		},
+		'&::-webkit-scrollbar-thumb:hover': {
+			background: "rgba(255, 255, 255, 0.2)",
+		},
+		'&::-webkit-scrollbar-track': {
+			background: "transparent",
+		},
 	},
 	gridItem: {
 		display: "flex",
@@ -158,25 +151,44 @@ const useStyles = makeStyles((styles) => ({
 		width: "auto",
 		height: "100%",
 		aspectRatio: '1 / 1',
-		backgroundColor: "rgba(0, 0, 0, 0.5)",
-		borderRadius: "1.25vh",
+		backgroundColor: "rgba(18, 18, 28, 0.7)",
+		borderRadius: 8,
 		padding: 0,
 		margin: 0,
 		flexDirection: "column",
 		overflow: "hidden",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+		transition: "all 0.2s ease",
+		"&:hover": {
+			transform: "translateY(-2px)",
+			boxShadow: "0 6px 20px rgba(0, 0, 0, 0.25)",
+			backgroundColor: "rgba(28, 28, 38, 0.7)",
+		}
 	},
 	mainImage: {
 		height: "auto",
 		width: '50%',
-		//backgroundColor: "orange",
 		objectFit: 'contain', 
 	},
 	gridText: {
-		fontSize: "1vh",
+		fontSize: 12,
 		fontWeight: 600,
-		//backgroundColor: "rgba(0, 0, 0, 0.5)",
-		//width: "100%",
 		textTransform: "none",
+		marginTop: 8,
+	},
+	searchIcon: {
+		color: "rgba(255, 255, 255, 0.5)",
+		marginRight: 8,
+		fontSize: 16,
+	},
+	searchField: {
+		'& .MuiInputBase-root': {
+			color: "#fff",
+			fontSize: 14,
+		},
+		'& .MuiInputBase-input': {
+			padding: "6px 0",
+		},
 	},
 }));
 

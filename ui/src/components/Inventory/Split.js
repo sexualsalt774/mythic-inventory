@@ -5,25 +5,68 @@ import { useDispatch } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
 	wrapper: {
-		padding: 25,
-		backgroundColor: 'rgb(18,18,28)',
-	},
-	input: {
-		width: '100%',
-		height: '100%',
-	},
-	quickActions: {
-		marginTop: 15,
-		textAlign: 'center',
-	},
-	btn: {
-		background: '#0b0a25b7',
-		color: 'rgb(165,210,74)',
-		transition: 'background ease-in 0.15s',
-		'&:hover': {
-			background: 'rgb(18,18,28)',
+		padding: 15,
+		backgroundColor: "rgba(19, 28, 46, 0.5)",
+		//backdropFilter: "blur(10px)",
+		borderRadius: 12,
+		boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+	  },
+	  input: {
+		width: "100%",
+		height: "100%",
+		"& .MuiOutlinedInput-root": {
+		  borderRadius: 8,
+		  backgroundColor: "rgba(19, 28, 46, 0.5)",
+		  "&:hover .MuiOutlinedInput-notchedOutline": {
+			borderColor: "rgba(255, 255, 255, 0.2)",
+		  },
+		  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+			borderColor: theme.palette.primary.main,
+		  },
 		},
-	},
+		"& .MuiInputLabel-root": {
+		  color: theme.palette.text.alt,
+		  "&.Mui-focused": {
+			color: theme.palette.primary.main,
+		  },
+		},
+		"& .MuiOutlinedInput-input": {
+		  color: theme.palette.text.main,
+		},
+		"& .MuiOutlinedInput-notchedOutline": {
+		  borderColor: "rgba(255, 255, 255, 0.1)",
+		},
+	  },
+	  quickActions: {
+		marginTop: 15,
+		textAlign: "center",
+	  },
+	  btn: {
+		background: "rgba(19, 28, 46, 0.8)",
+		color: theme.palette.primary.main,
+		transition: "all 0.2s ease",
+		borderColor: "rgba(255, 255, 255, 0.1)",
+		fontWeight: 600,
+		"&:hover": {
+		  background: "rgba(28, 42, 64, 0.8)",
+		  borderColor: theme.palette.primary.main,
+		  transform: "translateY(-2px)",
+		},
+	  },
+	  moveBtn: {
+		background: theme.palette.primary.main,
+		color: "#0D1625",
+		fontWeight: 600,
+		fontSize: 16,
+		padding: "10px 0",
+		transition: "all 0.2s ease",
+		"&:hover": {
+		  background: theme.palette.primary.light,
+		  transform: "translateY(-2px)",
+		  boxShadow: "0 4px 12px rgba(156, 230, 13, 0.3)",
+		},
+	  },
 }));
 
 export default React.forwardRef((props, ref) => {

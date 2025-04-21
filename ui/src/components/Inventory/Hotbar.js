@@ -8,17 +8,39 @@ import { getItemImage } from './item';
 
 const useStyles = makeStyles((theme) => ({
 	slide: {
-		position: 'absolute',
-		bottom: 0,
+		position: "absolute",
+		bottom: 20,
 		left: 0,
-		width: '100%',
-		display: 'flex',
-		justifyContent: 'center',
-		gap: 6,
-	},
-	equipped: {
-		marginRight: 20,
-	},
+		width: "100%",
+		display: "flex",
+		justifyContent: "center",
+		gap: 10,
+		zIndex: 1000,
+	  },
+	  hotbarContainer: {
+		display: "flex",
+		gap: 10,
+		background: "rgba(13, 22, 37, 0.75)",
+		//backdropFilter: "blur(10px)",
+		padding: "15px 20px",
+		borderRadius: 16,
+		boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+		border: "1px solid rgba(255, 255, 255, 0.05)",
+	  },
+	  equipped: {
+		marginLeft: 20,
+		position: "relative",
+		"&::before": {
+		  content: '""',
+		  position: "absolute",
+		  left: -15,
+		  top: "50%",
+		  transform: "translateY(-50%)",
+		  width: 1,
+		  height: "80%",
+		  background: "rgba(255, 255, 255, 0.1)",
+		},
+	  },
 }));
 
 export default connect()((props) => {

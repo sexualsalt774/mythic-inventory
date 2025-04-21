@@ -7,38 +7,54 @@ import { Sanitize } from '../../util/Parser';
 export default ({ item, count, rarity = false }) => {
 	const useStyles = makeStyles((theme) => ({
 		body: {
-			minWidth: 150,
+			minWidth: 200,
 		},
 		itemName: {
 			fontSize: 18,
+			fontWeight: 600,
 			color: theme.palette.rarities[`rare${item.rarity}`]
 				? theme.palette.rarities[`rare${item.rarity}`]
 				: theme.palette.text.main,
+			marginBottom: 4,
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
 		},
 		rarity: {
 			fontSize: 14,
 			color: theme.palette.rarities[`rare${item.rarity}`]
 				? theme.palette.rarities[`rare${item.rarity}`]
 				: theme.palette.text.main,
+			marginBottom: 8,
 		},
 		count: {
 			fontSize: 14,
 			color: theme.palette.text.main,
+			marginLeft: 5,
 			'&::before': {
 				content: '"x"',
-				marginLeft: 2,
+				marginRight: 2,
 			},
 		},
 		itemType: {
 			fontSize: 14,
 			color: theme.palette.text.alt,
+			marginBottom: 8,
+			display: "flex",
+			alignItems: "center",
 		},
 		usable: {
-			fontSize: 14,
+			fontSize: 12,
 			color: theme.palette.success.main,
+			marginLeft: 8,
+			background: "rgba(156, 230, 13, 0.1)",
+			padding: "2px 8px",
+			borderRadius: 12,
+			fontWeight: 600,
 		},
 		stackData: {
 			fontSize: 12,
+			marginBottom: 8,
 		},
 		itemWeight: {
 			fontSize: 14,
@@ -58,9 +74,57 @@ export default ({ item, count, rarity = false }) => {
 			},
 		},
 		description: {
-			paddingLeft: 20,
 			fontSize: 14,
 			color: theme.palette.text.alt,
+			marginTop: 8,
+			lineHeight: 1.5,
+		},
+		statChip: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: theme.palette.text.main,
+			border: "1px solid rgba(255, 255, 255, 0.1)",
+			margin: "4px 4px 4px 0",
+			"& .MuiChip-label": {
+				padding: "0 8px",
+			},
+		},
+		rarityBadge: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: theme.palette.rarities[`rare${item.rarity}`]
+				? theme.palette.rarities[`rare${item.rarity}`]
+				: theme.palette.text.main,
+			border: `1px solid ${
+				theme.palette.rarities[`rare${item.rarity}`]
+					? theme.palette.rarities[`rare${item.rarity}`]
+					: "rgba(255, 255, 255, 0.1)"
+			}`,
+			marginRight: 8,
+			"& .MuiChip-label": {
+				padding: "0 8px",
+			},
+		},
+		typeBadge: {
+			fontSize: 12,
+			height: 24,
+			borderRadius: 12,
+			background: "rgba(255, 255, 255, 0.05)",
+			color: theme.palette.text.main,
+			border: "1px solid rgba(255, 255, 255, 0.1)",
+			"& .MuiChip-label": {
+				padding: "0 8px",
+			},
+		},
+		tooltipDetails: {
+			marginTop: 12,
+			display: "flex",
+			flexWrap: "wrap",
+			gap: 4,
 		},
 	}));
 	const classes = useStyles();
